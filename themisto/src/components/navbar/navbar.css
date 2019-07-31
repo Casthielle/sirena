@@ -1,0 +1,19 @@
+.active{
+  color: red !important;
+}
+
+.nav-btn{
+  text-decoration: none;
+  color: gray;
+  padding: 0px 10px;
+}
+a.nav-btn:hover{
+  color: gray;
+  text-decoration: none;
+}
+
+.btn-btn{
+  height: auto;
+  line-height: normal;
+  padding: 0px 10px !important;
+}

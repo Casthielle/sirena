@@ -1,0 +1,41 @@
+version: "3"
+services:
+  themisto:
+    image: "themisto"
+    build:
+      context: ./themisto
+    depends_on:
+      - ganymede
+    volumes:
+      - ./themisto:/usr/src
+      - /usr/src/node_modules
+    ports:
+      - "9000:9000"
+    container_name: "themisto"
+    working_dir: "/usr/src"
+    stdin_open: true
+    tty: true
+  ganymede:
+    image: "ganymede"
+    build:
+      context: ./ganymede
+    env_file:
+      - ./ganymede/.env
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    volumes:
+      - ./ganymede:/usr/src
+      - /usr/src/node_modules
+    ports:
+      - "3000:3000"
+    container_name: "ganymede"
+    working_dir: "/usr/src"
+    stdin_open: true
+    tty: true
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - '27017:27017'

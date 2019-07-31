@@ -1,0 +1,8 @@
+.spinner-wrapper {
+    height: 100px;
+    display: flex;
+}
+
+.spinner-wrapper > div {
+    margin: auto
+}
