@@ -9,6 +9,7 @@ const Home = (props) => {
   return (
     <div className="container">
       <Form className="mb-3">
+        <h4>Buscar</h4>
         <Form.Row>
           <Col md={5}>
             <Form.Control onChange={ props.handlerChange('query') } type="input" placeholder={ props.translate('search') } />

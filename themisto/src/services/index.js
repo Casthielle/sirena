@@ -1,5 +1,10 @@
-
+/**
+* Class for API services.
+*/
 class Api {
+  /**
+  * Constructor
+  */
   constructor() {
     this._base_api = 'http://localhost:3000';
     this._endpoints = {
@@ -12,6 +17,12 @@ class Api {
     };
   }
 
+  /**
+  * Process API request.
+  * @param {object} data Data to be validated.
+  * @param {function} success Callback to execute when request is complete.
+  * @param {function} error Callback to execute when request isn't complete.
+  */
   async process(data, success, error) {
     const headers = new Headers({
       'Content-Type': 'application/json',
@@ -31,6 +42,11 @@ class Api {
     }
   }
 
+  /**
+  * Login.
+  * @param {object} body Login credentials.
+  * @return {promise} Promise.
+  */
   login(body) {
     return new Promise((resolve, reject) => {
       const data = {endpoint: 'login', body, method: 'POST'};
@@ -38,6 +54,11 @@ class Api {
     });
   }
 
+  /**
+  * Login.
+  * @param {object} body Login credentials.
+  * @return {promise} Promise.
+  */
   logout() {
     return new Promise((resolve, reject) => {
       const data = {endpoint: 'logout', method: 'GET'};
