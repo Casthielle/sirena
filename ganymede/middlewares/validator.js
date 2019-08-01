@@ -2,6 +2,7 @@
 * Class for validate form data.
 */
 class Validator {
+  
   /**
   * Constructor
   */
